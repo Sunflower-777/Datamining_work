@@ -3,3 +3,4 @@
 Pipfile
 .gitignore
 .python-version
+Pipfile.lock
