@@ -8,5 +8,45 @@
 </head>
 <body>
   <h1>{{ comment }}</h1>
+
+  <form action="/result" method="post">
+    <table>
+      <tbody>
+        <tr>
+          <th>タスク名</th>
+          <th>所要時間(h)</th>
+          <th>余裕がない時のしんどさ</th>
+          <th>余裕がある時のしんどさ</th>
+        </tr>
+        <tr>
+          <td><input type="text" name="taskName"></td>
+          <td><input type="text" name="neededTime"></td>
+          <td><input type="text" name="upperDifficulty"></td>
+          <td><input type="text" name="lowerDifficulty"></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="taskName"></td>
+          <td><input type="text" name="neededTime"></td>
+          <td><input type="text" name="upperDifficulty"></td>
+          <td><input type="text" name="lowerDifficulty"></td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <tbody>
+        <tr>
+          <th>day</th>
+          <th>締め切りタスク</th>
+          <th>使える時間</th>
+        </tr>
+        <tr>
+          <td>day1</td>
+          <td><input type="number" name="deadLine"></td>
+          <td><input type="number" name="usableTime"></td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="submit" value="お願いドラえもん">
+  </form>
 </body>
 </html>
