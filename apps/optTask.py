@@ -4,7 +4,7 @@ import cvxpy as cp
 """
 taskNum(int): タスクの数
 period(int): 費やす日数
-difficukty(list): 精神的ハードル的なタスク遂行難易度てきな急かされた時とそうでない時の辛さを入れる
+difficulty(list): 精神的ハードル的なタスク遂行難易度てきな急かされた時とそうでない時の辛さを入れる
 workTime(list): タスク1コマにつきどのくらい時間をかけるか(h)
 timePerDate(list): 1日に費やせる時間(h)
 deadLine(list): 締め切りをperiodに対応させて、費やすコマ数で入力。コマ数は自力で考えてくれ
