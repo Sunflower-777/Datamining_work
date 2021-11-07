@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+import numpy as np
 from apps.optTask import optTask
 
 app= Flask(__name__)
@@ -31,7 +32,21 @@ def optimize_task():
     
     comment = "データ送信済みだよ"
 
-    print(optTask(taskNum, period, difficulty, workTime, timePerDate, deadLine))
+    task = np.array(optTask(taskNum, period, difficulty, workTime, timePerDate, deadLine))
+
+    task = task.reshape([period, -1])
+    daylyTasks = dict()
+    for i, t in enumerate(task):
+      daylyTask = {}
+      for n in range(taskNum):
+        key = taskName[n]
+        daylyTask[key] = workTime[n] * (t[n] + t[n+taskNum])
+      daylyTasks[i+1] = daylyTask
+
+    return render_template('todo.html', daylyTasks=daylyTasks)
+  else:
+    comment = "ちゃんと入れてね"
+
 
   return render_template('index.html', comment=comment)
 
