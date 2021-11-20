@@ -22,10 +22,10 @@ def optimize_task():
 
     taskNum = len(taskName)
     period = len(usableTime)
-    # print(taskNum)
-    # print(period)
+    print(taskNum)
+    print(period)
     difficulty = [float(h) for h in (upperDifficulty+lowerDifficulty)*period]
-    # print(difficulty)
+    print(difficulty)
     workTime = [float(t) for t in neededTime]
     timePerDate = [float(t) for t in usableTime]
     deadLine = [float(t) for t in deadLine]
@@ -40,7 +40,8 @@ def optimize_task():
       daylyTask = {}
       for n in range(taskNum):
         key = taskName[n]
-        daylyTask[key] = workTime[n] * (t[n] + t[n+taskNum])
+        # daylyTask[key] = workTime[n] * (t[n] + t[n+taskNum])
+        daylyTask[key] = workTime[n] * (t[n])
       daylyTasks[i+1] = daylyTask
 
     return render_template('todo.html', daylyTasks=daylyTasks)

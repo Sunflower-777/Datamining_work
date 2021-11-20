@@ -12,7 +12,7 @@ deadLine(list): 締め切りをperiodに対応させて、費やすコマ数で�
 def optTask(taskNum, period, difficulty, workTime, timePerDate, deadLine):
   x = cp.Variable(taskNum*2*period, integer=True)
   # 問題
-  c = np.array(difficulty*period).T
+  c = np.array(difficulty).T
 
   # 作業にかけられる時間
   perOne = workTime + [0]*taskNum
