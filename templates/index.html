@@ -3,20 +3,16 @@
   <h1>{{ comment }}</h1>
 
   <form action="/result" method="post">
-    <table>
-      <tbody>
+    <table id="taskInfo">
+      <thead>
         <tr>
           <th>タスク名</th>
           <th>所要時間(h)</th>
           <th>遂行難易度</th>
           <th>残して置きたくなさ</th>
         </tr>
-        <tr>
-          <td><input type="text" name="taskName"></td>
-          <td><input type="number" step="1" name="neededTime"></td>
-          <td><input type="number" step="1" name="upperDifficulty"></td>
-          <td><input type="number" step="1" name="lowerDifficulty"></td>
-        </tr>
+      </thead>
+      <tbody id="taskForm">
         <tr>
           <td><input type="text" name="taskName"></td>
           <td><input type="number" step="1" name="neededTime"></td>
@@ -25,13 +21,17 @@
         </tr>
       </tbody>
     </table>
+    <input type="button" value="+" id="addTask">
+    <input type="button" value="-" id="deleteTask">
     <table>
-      <tbody>
+      <thead>
         <tr>
           <th>day</th>
           <th>締め切りタスク</th>
           <th>使える時間</th>
         </tr>
+      </thead>
+      <tbody id="timeForm">
         <tr>
           <td>day1</td>
           <td><input type="number" step="1" name="deadLine" value="0"></td>
@@ -52,6 +52,7 @@
         </tr>
       </tbody>
     </table>
+    <input type="button" value="+" id="plusTime">
     <input type="submit" value="お願いドラえもん">
   </form>
 
